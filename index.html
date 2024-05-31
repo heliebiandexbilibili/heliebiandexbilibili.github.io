@@ -1,38 +1,53 @@
+<!Doctype html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <style>
-         p {
-            border-style: dotted;
-            color: red;
-            text-shadow: 1px 1px black;
-            text-align: center;
-            letter-spacing: 3px;
-            border-radius: 6px;
-        }
-        button {
-            border: 2px solid blue;
-            border-radius: 5px;
-        }
-        input {
-            border: 2px solid green;
-            border-radius: 5px;
-            text-align: center;
-        }
-    </style>
-    <link rel="icon" href="./icon.ico" type="image/ico">
-    <title>猜 数 字 游 戏</title>
-</head>
-
-<body style="background-color:orange">
-    <p style="border-style: none">)(OvO)\----------猜-数-字-游-戏----------/(OvO)(</p>
-    <script type="text/javascript" src="lib.js"></script>
-    <p id="output">输出区</p>
-    <input value="" placeholder="请输入猜的数字" id="input_number">
-    <button onclick="helloworld()">提交答案</button>
-    <p style="color: white;text-align: left;text-shadow: 0px 0px;" id="tishi" onmouseover="show()" onmouseout="document.getElementById('tishi').innerHTML = '&nbsp提示：';">&nbsp;提示：</p>
-    <p id="tishi_2" style="color:orange;text-shadow: 0px 0px orange;display:none"></p>
-</body>
-
+    <head>
+        <title>斜率 倾斜角度 中间点计算</title>
+        <script>
+            function Gradient(){
+                let x1 = Number(document.getElementById("x_one").value)
+                let y1 = Number(document.getElementById("y_one").value)
+                let x2 = Number(document.getElementById("x_two").value)
+                let y2 = Number(document.getElementById("y_two").value)
+                document.getElementById("output").innerHTML = ((x2-x1)/(y2-y1))
+            }
+            function Slope(){
+                let x1 = Number(document.getElementById("x_one").value)
+                let y1 = Number(document.getElementById("y_one").value)
+                let x2 = Number(document.getElementById("x_two").value)
+                let y2 = Number(document.getElementById("y_two").value)
+                document.getElementById("output").innerHTML = ((y2-y1)/(x2-x1))
+            }
+            function Midpoint(){
+                let x1 = Number(document.getElementById("x_one").value)
+                let y1 = Number(document.getElementById("y_one").value)
+                let x2 = Number(document.getElementById("x_two").value)
+                let y2 = Number(document.getElementById("y_two").value)
+                document.getElementById("output").innerHTML = "(" + ((x2+x1)/2) + "," + ((y2+y1)/2) + ")"
+            }
+        </script>
+    </head>
+    <body>
+        <h1>斜率 倾斜角度 中间点计算</h1>
+        <p>
+            输入第一个坐标的x坐标(示例:[(<b>x1←这个</b>,y1),(x2,y2)]):
+            <input id="x_one" value="">
+        </p>
+        <p>
+            输入第一个坐标的x坐标(示例:[(x1,<b>y1←这个</b>),(x2,y2)]):
+            <input id="y_one" value="">
+        </p>
+        <p>
+            输入第二个坐标的x坐标(示例:[(x1,y1),(<b>x2←这个</b>,y2)]):
+            <input id="x_two" value="">
+        </p>
+        <p>
+            输入第二个坐标的x坐标(示例:[(x1,y1),(x2,<b>y2←这个</b>)]):
+            <input id="y_two" value="">
+        </p>
+        <button onclick="Gradient()">求出斜率</button>
+        <button onclick="Midpoint()">求出中间点</button>
+        <button onclick="Slope()">求出倾斜角度</button>
+        <br>
+        <p id="output">输出在这里</p>
+    </body>
 </html>
