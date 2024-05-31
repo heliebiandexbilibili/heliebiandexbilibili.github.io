@@ -8,21 +8,21 @@
                 let y1 = Number(document.getElementById("y_one").value)
                 let x2 = Number(document.getElementById("x_two").value)
                 let y2 = Number(document.getElementById("y_two").value)
-                document.getElementById("output").innerHTML = ((x2-x1)/(y2-y1))
+                document.getElementById("output").innerHTML = ((x2-x1)/(y2-y1)).toFixed(2)
             }
             function Slope(){
                 let x1 = Number(document.getElementById("x_one").value)
                 let y1 = Number(document.getElementById("y_one").value)
                 let x2 = Number(document.getElementById("x_two").value)
                 let y2 = Number(document.getElementById("y_two").value)
-                document.getElementById("output").innerHTML = ((y2-y1)/(x2-x1))
+                document.getElementById("output").innerHTML = ((y2-y1)/(x2-x1)).toFixed(2)
             }
             function Midpoint(){
-                let x1 = Number(document.getElementById("x_one").value)
-                let y1 = Number(document.getElementById("y_one").value)
-                let x2 = Number(document.getElementById("x_two").value)
-                let y2 = Number(document.getElementById("y_two").value)
-                document.getElementById("output").innerHTML = "(" + ((x2+x1)/2) + "," + ((y2+y1)/2) + ")"
+                let x1 = Number(eval(document.getElementById("x_one").value))
+                let y1 = Number(eval(document.getElementById("y_one").value))
+                let x2 = Number(eval(document.getElementById("x_two").value))
+                let y2 = Number(eval(document.getElementById("y_two").value))
+                document.getElementById("output").innerHTML = "(" + ((x2+x1)/2).toFixed(2) + "," + ((y2+y1)/2).toFixed(2) + ")"
             }
         </script>
         <style>
